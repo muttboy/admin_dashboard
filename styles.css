@@ -2,33 +2,38 @@
     box-sizing: border-box;
     margin: 0%;
     padding: 0%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 body {
     height: 100vh;
     display: grid;
     grid-template-columns: 300px 1fr;
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 100px 1fr;
     grid-template-areas: 
         "side header"
         "side main"
 }
 
 .banner {
-    color: aliceblue;
+    color: black;
     background-color: whitesmoke;
     grid-area: header;
 }
 
 .sidebar {
     color: aliceblue;
-    background-color: skyblue;
+    background-color: steelblue;
     grid-area: side;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 
 .main-panel {
-    background-color: dimgray;
+    background-color: lightgrey;
     padding: 25px;
     grid-area: main;
 
@@ -36,9 +41,9 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
-        "c1 c2 c3"
-        "c4 c4 c5"
-        "c4 c4 c6"
+        "c1 c1 c2"
+        "c1 c1 c3"
+        "c1 c1 c4"
         ;
     gap: 20px;
 }
@@ -64,22 +69,56 @@ body {
     grid-area: c4;
 }
 
-.card:nth-child(5) {
-    grid-area: c5;
+#main-card {
+    display: grid;
+    gap:20px;
+    background-color: lightgray;
+    grid-template-columns: repeat(2 1fr);
+    grid-template-rows: .1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header" 
+        "mc1 mc2"
+        "mc3 mc4"
+        "mc5 mc6"
+    ;
 }
 
-.card:nth-child(6) {
-    grid-area: c6;
+.main-card-sections {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 0px;
+    border-left: 10px;
+    border-style: solid;
+    border-color: goldenrod;
+    /* padding: 30px 20px; */
 }
 
-@media (max-width: 925px) {
-    .main-panel {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 200px);
-        grid-template-areas: initial;
-    }
+.main-card-sections:nth-child(1) {
+    grid-area: header;
+    background-color: lightgrey;
+    border-style: none;
+}
 
-    .card {
-        grid-area: initial;
-    }
+.main-card-sections:nth-child(2) {
+    grid-area: mc1;
+}
+
+.main-card-sections:nth-child(3) {
+    grid-area: mc2;
+}
+
+.main-card-sections:nth-child(4) {
+    grid-area: mc3;
+}
+
+.main-card-sections:nth-child(5) {
+    grid-area: mc4;
+}
+
+.main-card-sections:nth-child(6) {
+    grid-area: mc5;
+}
+
+.main-card-sections:nth-child(7) {
+    grid-area: mc6;
 }
